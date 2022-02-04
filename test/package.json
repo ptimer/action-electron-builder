@@ -22,19 +22,37 @@
     "url": "git+https://github.com/ptimer/action-electron-builder.git"
   },
   "build": {
-    "appId": "com.yourcompany.yourapp",
-    "productName": "Your App",
-    "mac": {
-      "category": "public.app-category.lifestyle"
+    "appId": "io.companyname.test",
+    "productName": "test",
+    "files": [
+      "dist/**/*.{js,css,html,ttf}"
+    ],
+    "directories": {
+      "buildResources": "./"
     },
-    "dmg": {
-      "icon": false
+    "mac": {
+      "category": "public.app-category.developer-tools",
+      "icon": false,
+      "artifactName": "${productName}-${version}-${os}-${arch}.${ext}",
+      "hardenedRuntime": true,
+      "entitlementsInherit": "build/entitlements.mac.inherit-plist"
     },
     "linux": {
-      "target": [
-        "AppImage"
-      ],
-      "category": "Office"
+      "target": "AppImage",
+      "artifactName": "${productName}-${version}-${os}-${arch}.${ext}",
+      "icon": false,
+      "category": "Development"
+    },
+    "win": {
+      "target": "nsis",
+      "artifactName": "${productName}-${version}-${os}-${arch}.${ext}",
+      "icon": false
+    },
+    "publish": {
+      "provider": "github",
+      "repo": "https://github.com/ptimer/action-electron-builder.git",
+      "owner": "ptimer",
+      "releaseType": "release"
     }
   }
 }
