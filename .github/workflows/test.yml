@@ -1,0 +1,36 @@
+name: Test
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  test:
+    name: Test
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest, windows-latest]
+        node-version: [16.x]
+        package_manager: [npm]
+        package_root: ["./test"]
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install test app dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Run action
+        uses: ./
+        with:
+          github_token: ${{ secrets.github_token }}
+          package_root: ${{ matrix.package_root }}
+          max_attempts: "2"
