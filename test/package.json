@@ -8,14 +8,10 @@
   "author": "Illiab",
   "license": "CC0-1.0",
   "scripts": {
-    "start": "electron .",
-    "pack": "electron-builder --dir",
-    "dist": "electron-builder",
-    "release": "electron-builder"
+    "start": "electron ."
   },
   "devDependencies": {
-    "electron": "13.1.7",
-    "electron-builder": "^22.14.5"
+    "electron": "13.1.7"
   },
   "repository": {
     "type": "git",
