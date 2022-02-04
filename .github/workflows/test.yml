@@ -37,4 +37,3 @@ jobs:
           package_root: ${{ matrix.package_root }}
           release: ${{ startsWith(github.ref, 'refs/tags/v') }}
           max_attempts: "2"
-          args: "-p always"
