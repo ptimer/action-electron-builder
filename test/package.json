@@ -35,12 +35,12 @@
         "AppImage"
       ],
       "category": "Office"
-    },
-    "publish": {
-      "provider": "github",
-      "repo": "https://github.com/ptimer/action-electron-builder.git",
-      "owner": "ptimer",
-      "releaseType": "release"
     }
+  },
+  "publish": {
+    "provider": "github",
+    "repo": "https://github.com/ptimer/action-electron-builder.git",
+    "owner": "ptimer",
+    "releaseType": "release"
   }
 }
