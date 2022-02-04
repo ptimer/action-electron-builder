@@ -2,15 +2,16 @@
   "name": "pale-cent-stamp-da63p",
   "productName": "pale-cent-stamp-da63p",
   "description": "My Electron application description",
-  
   "keywords": [],
   "main": "./main.js",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "author": "Illiab",
+  "license": "CC0-1.0",
   "scripts": {
     "start": "electron .",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "dist": "electron-builder",
+    "release": "electron-builder"
   },
   "devDependencies": {
     "electron": "13.1.7",
