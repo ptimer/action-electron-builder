@@ -4,7 +4,7 @@
   "description": "My Electron application description",
   "keywords": [],
   "main": "./main.js",
-  "version": "1.5.0",
+  "version": "1.8.0",
   "author": "Illiab",
   "license": "CC0-1.0",
   "scripts": {
@@ -22,31 +22,19 @@
     "url": "git+https://github.com/ptimer/action-electron-builder.git"
   },
   "build": {
-    "appId": "io.companyname.test",
-    "productName": "test",
-    "files": [
-      "dist/**/*.{js,css,html,ttf}"
-    ],
-    "directories": {
-      "buildResources": "./"
-    },
+    "appId": "com.yourcompany.yourapp",
+    "productName": "Your App",
     "mac": {
-      "category": "public.app-category.developer-tools",
-      "icon": false,
-      "artifactName": "${productName}-${version}-${os}-${arch}.${ext}",
-      "hardenedRuntime": true,
-      "entitlementsInherit": "build/entitlements.mac.inherit-plist"
+      "category": "public.app-category.lifestyle"
+    },
+    "dmg": {
+      "icon": false
     },
     "linux": {
-      "target": "AppImage",
-      "artifactName": "${productName}-${version}-${os}-${arch}.${ext}",
-      "icon": false,
-      "category": "Development"
-    },
-    "win": {
-      "target": "nsis",
-      "artifactName": "${productName}-${version}-${os}-${arch}.${ext}",
-      "icon": false
+      "target": [
+        "AppImage"
+      ],
+      "category": "Office"
     },
     "publish": {
       "provider": "github",
