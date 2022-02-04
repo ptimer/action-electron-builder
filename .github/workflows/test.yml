@@ -26,7 +26,9 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install test app dependencies
-        run: npm ci --ignore-scripts
+        run: |
+          cd ${{ matrix.package_root }}
+          ${{ matrix.package_manager }} install
 
       - name: Run action
         uses: ./
